@@ -7,5 +7,5 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-	return 'About Page';
+	return ['foo' => 'bar'];
 });
