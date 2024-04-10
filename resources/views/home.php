@@ -7,6 +7,11 @@
   <title>Home Page</title>
 </head>
 <body>
-Hello from the Home Page
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  Hello from the Home Page
 </body>
 </html>
