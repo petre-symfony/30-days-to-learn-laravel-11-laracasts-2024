@@ -8,6 +8,9 @@
 </head>
 <body>
 <nav>
+  <x-nav-link>Home</x-nav-link>
+  <x-nav-link>About</x-nav-link>
+  <x-nav-link>Contact</x-nav-link>
   <a href="/">Home</a>
   <a href="/about">About</a>
   <a href="/contact">Contact</a>
