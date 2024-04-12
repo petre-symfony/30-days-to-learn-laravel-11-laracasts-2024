@@ -20,7 +20,7 @@
               <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <x-nav-link href="/">Home</x-nav-link>
-                <x-nav-link href="/about" id="something">About</x-nav-link>
+                <x-nav-link href="/about" active="foobar">About</x-nav-link>
                 <x-nav-link href="/contact">Contact</x-nav-link>
               </div>
             </div>
