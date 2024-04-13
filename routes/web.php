@@ -49,9 +49,8 @@ Route::get('/jobs/{id}', function ($id) {
 	];
 
 	$job = Arr::first($jobs, fn($job) => $job['id'] == $id);
-	dd($job);
 
-	return view('contact');
+	return view('job', ['job' => $job]);
 });
 
 Route::get('/contact', function () {
