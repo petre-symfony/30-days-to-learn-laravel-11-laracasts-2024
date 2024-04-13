@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 	$jobs = Job::all();
 
-	dd($jobs);
+	dd($jobs[0]->title);
 	//return view('home');
 });
 
