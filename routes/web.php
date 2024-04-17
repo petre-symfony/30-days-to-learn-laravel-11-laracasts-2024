@@ -26,7 +26,15 @@ Route::get('/jobs/{id}', function (int $id) {
 });
 
 Route::post('/jobs', function (){
-	dd(request()->all());
+	// validation ...
+
+	Job::create([
+		'title' => request('title'),
+		'salaru' => request('salary'),
+		'employer_id' => 1
+	]);
+
+	return redirect('/jobs');
 });
 
 Route::get('/contact', function () {
