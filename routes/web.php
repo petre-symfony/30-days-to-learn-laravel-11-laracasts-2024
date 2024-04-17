@@ -14,15 +14,15 @@ Route::get('/jobs', function () {
 	]);
 });
 
+Route::get('/jobs/create', function () {
+	return view('create-job');
+});
+
 Route::get('/jobs/{id}', function (int $id) {
 
 	$job = Job::find($id);
 
 	return view('job', ['job' => $job]);
-});
-
-Route::get('/jobs/create', function () {
-	dd('hello there');
 });
 
 Route::get('/contact', function () {
