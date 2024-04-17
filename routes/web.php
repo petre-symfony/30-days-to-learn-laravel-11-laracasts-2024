@@ -30,7 +30,7 @@ Route::post('/jobs', function (){
 
 	Job::create([
 		'title' => request('title'),
-		'salaru' => request('salary'),
+		'salary' => request('salary'),
 		'employer_id' => 1
 	]);
 
