@@ -26,7 +26,7 @@ Route::get('/jobs/{id}', function (int $id) {
 });
 
 Route::post('/jobs', function (){
-	dd('hello from the post request');
+	dd(request()->all());
 });
 
 Route::get('/contact', function () {
