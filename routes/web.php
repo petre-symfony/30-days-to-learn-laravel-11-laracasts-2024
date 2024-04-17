@@ -21,6 +21,10 @@ Route::get('/jobs/{id}', function (int $id) {
 	return view('job', ['job' => $job]);
 });
 
+Route::get('/jobs/create', function () {
+	dd('hello there');
+});
+
 Route::get('/contact', function () {
 	return view('contact');
 });
