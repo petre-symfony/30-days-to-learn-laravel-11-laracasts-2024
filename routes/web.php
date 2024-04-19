@@ -20,6 +20,8 @@ Route::get('/jobs/create', function () {
 	return view('jobs.create');
 });
 
+Route::get('/posts/{post:slug}', function () {});
+
 //show
 Route::get('/jobs/{job}', function (Job $job) {
 	return view('jobs.show', ['job' => $job]);
