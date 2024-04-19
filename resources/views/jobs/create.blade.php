@@ -28,6 +28,7 @@
                     placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6
                   "
                   placeholder="Shift Leader"
+                  required
                 >
               </div>
             </div>
