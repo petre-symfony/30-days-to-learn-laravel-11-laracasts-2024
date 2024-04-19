@@ -54,12 +54,16 @@ Route::get('/jobs/{id}/edit', function (int $id) {
 
 //update
 Route::patch('/jobs/{id}', function (int $id) {
-
+	//validate
+	//authorize (on hold...)
+	//update the job
+	//persist
+	//redirect to the job page
 });
 
 //destroy
 Route::delete('/jobs/{id}', function (int $id) {
-	
+
 });
 
 Route::get('/contact', function () {
