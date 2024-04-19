@@ -73,8 +73,11 @@ Route::patch('/jobs/{id}', function (int $id) {
 //destroy
 Route::delete('/jobs/{id}', function (int $id) {
 	//authorize(on hold...)
-	//delete the job
-	//redirect
+
+	$job = Job::findOrFail($id);
+	$job->delete();
+
+	return redirect('/jobs');
 });
 
 Route::get('/contact', function () {
