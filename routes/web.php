@@ -21,10 +21,7 @@ Route::get('/jobs/create', function () {
 });
 
 //show
-Route::get('/jobs/{id}', function (int $id) {
-
-	$job = Job::findOrFail($id);
-
+Route::get('/jobs/{job}', function (Job $job) {
 	return view('jobs.show', ['job' => $job]);
 });
 
