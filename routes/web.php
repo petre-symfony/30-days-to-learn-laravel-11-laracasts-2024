@@ -44,11 +44,22 @@ Route::post('/jobs', function (){
 	return redirect('/jobs');
 });
 
+//sdit
 Route::get('/jobs/{id}/edit', function (int $id) {
 
 	$job = Job::find($id);
 
 	return view('jobs.edit', ['job' => $job]);
+});
+
+//update
+Route::patch('/jobs/{id}', function (int $id) {
+
+});
+
+//destroy
+Route::delete('/jobs/{id}', function (int $id) {
+	
 });
 
 Route::get('/contact', function () {
