@@ -23,7 +23,7 @@ Route::get('/jobs/create', function () {
 //show
 Route::get('/jobs/{id}', function (int $id) {
 
-	$job = Job::find($id);
+	$job = Job::findOrFail($id);
 
 	return view('jobs.show', ['job' => $job]);
 });
@@ -47,7 +47,7 @@ Route::post('/jobs', function (){
 //sdit
 Route::get('/jobs/{id}/edit', function (int $id) {
 
-	$job = Job::find($id);
+	$job = Job::findOrFail($id);
 
 	return view('jobs.edit', ['job' => $job]);
 });
@@ -60,11 +60,7 @@ Route::patch('/jobs/{id}', function (int $id) {
 	]);
 	//authorize (on hold...)
 
-	$job = Job::find($id);
-
-	$job->title = request('title');
-	$job->salary = request('salary');
-	$job->save();
+	$job = Job::findOrFail($id);
 
 	$job->update([
 		'title' => request('title'),
