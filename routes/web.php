@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use App\Models\Job;
 use Illuminate\Support\Facades\Route;
 
@@ -7,13 +8,14 @@ Route::get('/', function () {
 	return view('home');
 });
 
+Route::get('/jobs', [JobController::class, 'index']);
 // index
-Route::get('/jobs', function () {
-	$jobs = Job::with('employer')->latest()->simplePaginate(3);
-	return view('jobs.index', [
-		'jobs' => $jobs
-	]);
-});
+// Route::get('/jobs', function () {
+// 	$jobs = Job::with('employer')->latest()->simplePaginate(3);
+// 	return view('jobs.index', [
+// 		'jobs' => $jobs
+// 	]);
+// });
 
 //form
 Route::get('/jobs/create', function () {
@@ -69,7 +71,7 @@ Route::patch('/jobs/{job}', function (Job $job) {
 Route::delete('/jobs/{job}', function (Job $job) {
 	//authorize(on hold...)
 	$job->delete();
-	
+
 	return redirect('/jobs');
 });
 
