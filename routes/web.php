@@ -66,12 +66,15 @@ Route::patch('/jobs/{id}', function (int $id) {
 		'title' => request('title'),
 		'salary' => request('salary')
 	]);
-	//redirect to the job page
+
+	return redirect('/jobs/' . $job->id);
 });
 
 //destroy
 Route::delete('/jobs/{id}', function (int $id) {
-
+	//authorize(on hold...)
+	//delete the job
+	//redirect
 });
 
 Route::get('/contact', function () {
