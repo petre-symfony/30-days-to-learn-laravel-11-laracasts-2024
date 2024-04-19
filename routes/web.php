@@ -54,10 +54,22 @@ Route::get('/jobs/{id}/edit', function (int $id) {
 
 //update
 Route::patch('/jobs/{id}', function (int $id) {
-	//validate
+	request()->validate([
+		'title' => ['required', 'min:3'],
+		'salary' => ['required']
+	]);
 	//authorize (on hold...)
-	//update the job
-	//persist
+
+	$job = Job::find($id);
+
+	$job->title = request('title');
+	$job->salary = request('salary');
+	$job->save();
+
+	$job->update([
+		'title' => request('title'),
+		'salary' => request('salary')
+	]);
 	//redirect to the job page
 });
 
