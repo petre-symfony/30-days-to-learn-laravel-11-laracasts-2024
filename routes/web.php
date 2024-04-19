@@ -74,8 +74,7 @@ Route::patch('/jobs/{id}', function (int $id) {
 Route::delete('/jobs/{id}', function (int $id) {
 	//authorize(on hold...)
 
-	$job = Job::findOrFail($id);
-	$job->delete();
+	Job::findOrFail($id)->delete();
 
 	return redirect('/jobs');
 });
