@@ -44,22 +44,18 @@ Route::post('/jobs', function (){
 });
 
 //sdit
-Route::get('/jobs/{id}/edit', function (int $id) {
-
-	$job = Job::findOrFail($id);
+Route::get('/jobs/{job}/edit', function (Job $job) {
 
 	return view('jobs.edit', ['job' => $job]);
 });
 
 //update
-Route::patch('/jobs/{id}', function (int $id) {
+Route::patch('/jobs/{job}', function (Job $job) {
+	//authorize (on hold...)
 	request()->validate([
 		'title' => ['required', 'min:3'],
 		'salary' => ['required']
 	]);
-	//authorize (on hold...)
-
-	$job = Job::findOrFail($id);
 
 	$job->update([
 		'title' => request('title'),
@@ -70,11 +66,10 @@ Route::patch('/jobs/{id}', function (int $id) {
 });
 
 //destroy
-Route::delete('/jobs/{id}', function (int $id) {
+Route::delete('/jobs/{job}', function (Job $job) {
 	//authorize(on hold...)
-
-	Job::findOrFail($id)->delete();
-
+	$job->delete();
+	
 	return redirect('/jobs');
 });
 
