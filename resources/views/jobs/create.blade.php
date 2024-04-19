@@ -30,6 +30,10 @@
                   placeholder="Shift Leader"
                 >
               </div>
+
+              @error('title')
+                <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
+              @enderror
             </div>
           </div>
 
@@ -50,10 +54,15 @@
                   placeholder="$50.000 Per Year"
                 >
               </div>
+
+              @error('salary')
+                <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
+              @enderror
             </div>
           </div>
         </div>
 
+        {{--
         <div class="mt-10">
           @if ($errors->any())
             <ul>
@@ -63,6 +72,7 @@
             </ul>
           @endif
         </div>
+        --}}
       </div>
 
     </div>
