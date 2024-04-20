@@ -18,7 +18,7 @@ Route::get('/posts/{post:slug}', function () {});
 //});
 
 Route::resource('jobs', JobController::class, [
-	'except' => ['edit']
+	'only' => ['index', 'show', 'create', 'store']
 ]);
 
 Route::view('/contact', 'contact');
