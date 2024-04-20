@@ -4,6 +4,7 @@ use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/','home');
+Route::view('/contact', 'contact');
 
 Route::get('/posts/{post:slug}', function () {});
 
@@ -17,8 +18,6 @@ Route::get('/posts/{post:slug}', function () {});
 //	Route::delete('/jobs/{job}', 'destroy');
 //});
 
-Route::resource('jobs', JobController::class, [
-	'only' => ['index', 'show', 'create', 'store']
-]);
+Route::resource('jobs', JobController::class);
 
-Route::view('/contact', 'contact');
+
