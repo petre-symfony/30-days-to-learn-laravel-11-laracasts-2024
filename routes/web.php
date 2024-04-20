@@ -17,6 +17,8 @@ Route::get('/posts/{post:slug}', function () {});
 //	Route::delete('/jobs/{job}', 'destroy');
 //});
 
-Route::resource('jobs', JobController::class);
+Route::resource('jobs', JobController::class, [
+	'except' => ['edit']
+]);
 
 Route::view('/contact', 'contact');
