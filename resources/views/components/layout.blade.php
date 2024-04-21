@@ -27,8 +27,10 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-4 flex items-center md:ml-6">
-              <x-nav-link href="/login">Log In</x-nav-link>
-              <x-nav-link href="/register">Register</x-nav-link>
+              @guest
+                <x-nav-link href="/login">Log In</x-nav-link>
+                <x-nav-link href="/register">Register</x-nav-link>
+              @endguest
             </div>
           </div>
           <div class="-mr-2 flex md:hidden">
