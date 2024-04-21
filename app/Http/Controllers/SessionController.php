@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller {
 	public function create() {
@@ -14,6 +15,8 @@ class SessionController extends Controller {
 	}
 
 	public function destroy() {
-		dd('log the user out');
+		Auth::logout();
+
+		return redirect('/');
 	}
 }
