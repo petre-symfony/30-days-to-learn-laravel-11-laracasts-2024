@@ -10,6 +10,15 @@ class RegisterUserController extends Controller {
 	}
 
 	public function store() {
-		dd(request()->all());
+		//validate
+		request()->validate([
+			'first_name' => ['required'],
+			'last_name' => ['required'],
+			'email' => ['required', 'email', 'max:254'],
+			'password' => ['required']
+		]);
+		//create the user
+		//log in
+		//redirect somewhere
 	}
 }
