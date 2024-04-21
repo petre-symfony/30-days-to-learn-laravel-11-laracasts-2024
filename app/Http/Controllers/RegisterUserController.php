@@ -6,6 +6,6 @@ use Illuminate\Http\Request;
 
 class RegisterUserController extends Controller {
 	public function create() {
-		dd('hello');
+		return view('auth.register');
 	}
 }
