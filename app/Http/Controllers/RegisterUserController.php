@@ -19,13 +19,8 @@ class RegisterUserController extends Controller {
 			'email' => ['required', 'email', 'max:254'],
 			'password' => ['required', Password::min(6), 'confirmed']
 		]);
-		dd($validatedAttributes);
 		//create the user
-		User::create([
-			'firat_name' => request('first_name'),
-			'laat_name' => request('last_name'),
-			'emaiL' => request('email')
-		]);
+		User::create($validatedAttributes);
 		//log in
 		//redirect somewhere
 	}
