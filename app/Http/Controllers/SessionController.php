@@ -12,4 +12,8 @@ class SessionController extends Controller {
 	public function store() {
 		dd(request()->all());
 	}
+
+	public function destroy() {
+		dd('log the user out');
+	}
 }
