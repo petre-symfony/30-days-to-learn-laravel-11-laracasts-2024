@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterUserController;
 
 Route::view('/','home');
 Route::view('/contact', 'contact');
@@ -20,4 +21,5 @@ Route::get('/posts/{post:slug}', function () {});
 
 Route::resource('jobs', JobController::class);
 
+Route::get('/register', [RegisterUserController::class, 'create']);
 
