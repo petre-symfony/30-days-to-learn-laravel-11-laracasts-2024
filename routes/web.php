@@ -22,4 +22,4 @@ Route::get('/posts/{post:slug}', function () {});
 Route::resource('jobs', JobController::class);
 
 Route::get('/register', [RegisterUserController::class, 'create']);
-
+Route::post('/register', [RegisterUserController::class, 'store']);
