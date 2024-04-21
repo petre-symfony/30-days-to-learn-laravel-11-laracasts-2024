@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
 
@@ -12,13 +13,19 @@ class RegisterUserController extends Controller {
 
 	public function store() {
 		//validate
-		request()->validate([
+		$validatedAttributes = request()->validate([
 			'first_name' => ['required'],
 			'last_name' => ['required'],
-			'email' => ['required', 'email', 'max:254', 'confirmed'], //email_confirmation
-			'password' => ['required', Password::min(6), 'confirmed'] //password_confirmation
+			'email' => ['required', 'email', 'max:254'],
+			'password' => ['required', Password::min(6), 'confirmed']
 		]);
+		dd($validatedAttributes);
 		//create the user
+		User::create([
+			'firat_name' => request('first_name'),
+			'laat_name' => request('last_name'),
+			'emaiL' => request('email')
+		]);
 		//log in
 		//redirect somewhere
 	}
