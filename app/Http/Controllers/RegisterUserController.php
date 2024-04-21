@@ -23,7 +23,7 @@ class RegisterUserController extends Controller {
 		$user = User::create($attributes);
 
 		Auth::login($user);
-		
+
 		return redirect('/jobs');
 	}
 }
