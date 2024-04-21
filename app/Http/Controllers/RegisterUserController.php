@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Password;
 
 class RegisterUserController extends Controller {
 	public function create() {
@@ -15,7 +16,7 @@ class RegisterUserController extends Controller {
 			'first_name' => ['required'],
 			'last_name' => ['required'],
 			'email' => ['required', 'email', 'max:254'],
-			'password' => ['required']
+			'password' => ['required', Password::min(5)->letters()->numbers()]
 		]);
 		//create the user
 		//log in
