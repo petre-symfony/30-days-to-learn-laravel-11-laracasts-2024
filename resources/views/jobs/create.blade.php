@@ -14,9 +14,7 @@
 
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div class="sm:col-span-4">
-            <label for="title" class="block text-sm font-medium leading-6 text-gray-900">
-              Title
-            </label>
+            <x-form-label for="title">Title</x-form-label>
             <div class="mt-2">
               <div
                   class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2
@@ -39,9 +37,7 @@
           </div>
 
           <div class="sm:col-span-4">
-            <label for="salary" class="block text-sm font-medium leading-6 text-gray-900">
-              Salary
-            </label>
+            <x-form-label for="salary">Salary</x-form-label>
             <div class="mt-2">
               <div
                 class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2
