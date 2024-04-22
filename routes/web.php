@@ -19,8 +19,13 @@ Route::get('/posts/{post:slug}', function () {});
 //	Route::patch('/jobs/{job}', 'update');
 //	Route::delete('/jobs/{job}', 'destroy');
 //});
-
-Route::resource('jobs', JobController::class)->middleware('auth');
+Route::resource('jobs', JobController::class)
+	->only(['index', 'show'])
+;
+Route::resource('jobs', JobController::class)
+	->except(['index', 'show'])
+	->middleware('auth')
+;
 
 Route::get('/register', [RegisterUserController::class, 'create']);
 Route::post('/register', [RegisterUserController::class, 'store']);
