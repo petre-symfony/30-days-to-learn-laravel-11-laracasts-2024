@@ -41,10 +41,7 @@ class JobController extends Controller {
 	}
 
 	public function edit(Job $job) {
-		if (Auth::user()->cannot('edit-job', $job)){
-			dd();
-		};
-		//Gate::authorize('edit-job', $job);
+		Gate::authorize('edit-job', $job);
 
 		return view('jobs.edit', ['job' => $job]);
 	}
