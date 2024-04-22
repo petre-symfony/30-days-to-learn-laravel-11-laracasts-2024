@@ -20,7 +20,7 @@ Route::get('/posts/{post:slug}', function () {});
 //	Route::delete('/jobs/{job}', 'destroy');
 //});
 
-Route::resource('jobs', JobController::class);
+Route::resource('jobs', JobController::class)->middleware('auth');
 
 Route::get('/register', [RegisterUserController::class, 'create']);
 Route::post('/register', [RegisterUserController::class, 'store']);
