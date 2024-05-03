@@ -12,7 +12,7 @@ use Illuminate\Queue\SerializesModels;
 
 class JobPosted extends Mailable {
 	use Queueable, SerializesModels;
-
+	public $foo = 'bar';
 	/**
 	 * Create a new message instance.
 	 */
