@@ -6,7 +6,10 @@ use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\SessionController;
 
 Route::get('/test', function (){
-	return new \App\Mail\JobPosted();
+	\Illuminate\Support\Facades\Mail::to('jeffrey@laracasts.com')
+		->send(new \App\Mail\JobPosted());
+
+	return 'Done';
 });
 
 Route::view('/','home');
