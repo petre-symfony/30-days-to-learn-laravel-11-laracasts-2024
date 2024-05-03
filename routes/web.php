@@ -6,9 +6,8 @@ use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\SessionController;
 
 Route::get('/test', function (){
-	dispatch(function (){
-		logger('Hello from queue');
-	})->delay(5);
+	\App\Jobs\TranslateJob::dispatch();
+
 	return 'Done';
 });
 
