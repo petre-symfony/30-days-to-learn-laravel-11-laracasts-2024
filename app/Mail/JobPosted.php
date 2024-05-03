@@ -12,7 +12,6 @@ use Illuminate\Queue\SerializesModels;
 
 class JobPosted extends Mailable {
 	use Queueable, SerializesModels;
-	public $foo = 'bar';
 	/**
 	 * Create a new message instance.
 	 */
@@ -36,6 +35,10 @@ class JobPosted extends Mailable {
 	public function content(): Content {
 		return new Content(
 			view: 'mail.job-posted',
+			with: [
+				'foo' => 'bar',
+				'title' => $this->job->title
+			]
 		);
 	}
 
