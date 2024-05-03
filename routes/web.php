@@ -8,7 +8,7 @@ use App\Http\Controllers\SessionController;
 Route::get('/test', function (){
 	dispatch(function (){
 		logger('Hello from queue');
-	});
+	})->delay(5);
 	return 'Done';
 });
 
