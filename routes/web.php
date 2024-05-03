@@ -5,13 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\SessionController;
 
-Route::get('/test', function (){
-	\Illuminate\Support\Facades\Mail::to('jeffrey@laracasts.com')
-		->send(new \App\Mail\JobPosted());
-
-	return 'Done';
-});
-
 Route::view('/','home');
 Route::view('/contact', 'contact');
 
