@@ -6,7 +6,9 @@ use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\SessionController;
 
 Route::get('/test', function (){
-	\App\Jobs\TranslateJob::dispatch();
+	$job = App\Models\Job::first();
+
+	\App\Jobs\TranslateJob::dispatch($job);
 
 	return 'Done';
 });
